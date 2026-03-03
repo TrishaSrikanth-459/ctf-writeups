@@ -123,7 +123,7 @@ Reconnaissance and Enumeration:
             
         2. I enter the following JavaScript code into a Contact Us textbox and click send. After a few minutes, a simulated viewer visiting [http://10.82.159.5/contact.php](http://10.82.159.5/contact.php) will trigger an outbound HTTP request to the attacker’s box.
             
-            ![Contact Us Textbox](Writeup%20#1/Contact-Us.png)
+            ![Contact Us Textbox](Writeup-1/Contact-Us.png)
             
         3. I receive a response:
             
@@ -135,7 +135,7 @@ Reconnaissance and Enumeration:
             
         4. I then attempt to steal the visiting user’s PHPSESSID session cookie:
             
-            ![XSS Attack](Writeup%20#1/XSS-Attack.png)
+            ![XSS Attack](Writeup-1/XSS-Attack.png)
             
         5. I receive a response:
             
@@ -148,11 +148,11 @@ Reconnaissance and Enumeration:
 2. CSRF Attack:
     1. I add what I just obtained as a value to my PHPSESSID cookie and refresh to find the **first flag**
         
-        ![Session Hijacking](Writeup%20#1/Session-Hijacking.png)
+        ![Session Hijacking](Writeup-1/Session-Hijacking.png)
         
     2. I then notice that I am logged in as **mod**; I visit the chat.php page and notice that I have an active chat with the site’s **admin**. I send a random link to test if the admin successfully clicks on any link sent in the chat as such:
         
-        ![Chat with Admin](Writeup%20#1/Chat-With-Admin.webp)
+        ![Chat with Admin](Writeup-1/Chat-With-Admin.webp)
         
     3. Soon, I get a response back to my web server:
         
@@ -184,12 +184,12 @@ Reconnaissance and Enumeration:
         
     7. I then craft the following link and send it to the admin over the chat interface: [http://review.thm/promote_coadmin.php?username=mod&csrf_token_promote=21232f297a57a5a743894a0e4a801fc3](http://review.thm/promote_coadmin.php?username=mod&csrf_token_promote=21232f297a57a5a743894a0e4a801fc3); I set the username to my username, mod, and set the CSRF token to our created token. As per the name “promote_coadmin”, I am hoping that if the admin clicks on this link, I will be promoted to admin. I logout and login and find that I am successfully an admin; I then find the **second flag**. 
         
-        ![Privilege Escalation](Writeup%20#1/Privilege-Escalation.png)
+        ![Privilege Escalation](Writeup-1/Privilege-Escalation.png)
         
 3. Gaining root access:
     1. Based on /mail.php, I know there are two websites, /finance.php and /lottery.php. After visiting /finance.php, I notice the following login functionality:
         
-        ![finance.php webpage](Writeup%20#1/Finance-Webpage.webp)
+        ![finance.php webpage](Writeup-1/Finance-Webpage.webp)
         
     2.  Fortunately, the letter from /mail.php provides the password to login. After logging in, I notice upload functionality and attempt to exploit that to gain RCE. 
         1. I use metasploit to create the following reverse shell listener :
