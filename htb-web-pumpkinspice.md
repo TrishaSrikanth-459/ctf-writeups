@@ -1,10 +1,4 @@
 # Vulnerability Report: PumpkinSpice
-
-**Challenge:** PumpkinSpice (HackTheBox)
-**Author:** lean
-**Difficulty:** Easy
-**Date:** 12th October 2023
-
 ---
 
 ## Context
