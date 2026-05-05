@@ -7,12 +7,9 @@ handoff portal for operations teams.
 
 - `backend/`: all vulnerable backend code, templates, static assets, and snippet files
 - `solve.py`: proof-of-concept exploit script
-- `Vulnerability_Report.md`: formal report in the format you requested
+- `Vulnerability_Report.md`: formal report
 - `Dockerfile`: container entrypoint for public deployment
 - `docker-compose.yml`: simple public-server launch configuration
-- `PUBLIC_DEPLOY.md`: exact steps for making the app internet-accessible
-- `run.sh`: local launcher
-- `share_public.sh`: local launcher plus public ngrok tunnel
 
 ## Goal
 
@@ -23,13 +20,6 @@ Recover the flag stored in the private admin packet.
 Players can access the challenge here:
 
 `https://hung-concessible-overjoyfully.ngrok-free.dev`
-
-## Public Deployment
-
-If you want someone anywhere on the internet to reach it, deploy this folder on
-a public Linux server. The project includes both a `Dockerfile` and
-`docker-compose.yml` for that case. The step-by-step commands are in
-`PUBLIC_DEPLOY.md`.
 
 ## Intended Solve Path
 
